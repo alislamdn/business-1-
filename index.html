@@ -87,6 +87,13 @@
     .service-row p { margin: 7px 0 0; color: var(--muted); font-size: 14px; }
     .service-arrow { color: var(--green); font-size: 20px; }
 
+    .process-section { border-block: 1px solid var(--line); background: #eff1e9; }
+    .process-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 42px; }
+    .process-step { padding-top: 18px; border-top: 2px solid var(--green); }
+    .process-number { color: var(--coral); font: 600 13px var(--display); }
+    .process-step h3 { margin: 16px 0 8px; font: 600 22px var(--display); }
+    .process-step p { max-width: 340px; margin: 0; color: var(--muted); font-size: 14px; }
+
     .work-section { padding: 100px 0 110px; background: var(--green); color: var(--white); }
     .work-section .eyebrow { color: var(--lime); }
     .work-section .section-title { max-width: 650px; }
@@ -125,17 +132,32 @@
     .owner-name { margin: 24px 0 0; font: 600 17px var(--display); }
     .owner-role { margin: 2px 0 0; color: var(--muted); font-size: 13px; }
 
+    .faq-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 74px; }
+    .faq-list { border-top: 1px solid var(--line); }
+    .faq-list details { border-bottom: 1px solid var(--line); }
+    .faq-list summary { display: flex; min-height: 68px; align-items: center; justify-content: space-between; gap: 18px; list-style: none; cursor: pointer; font: 600 17px/1.35 var(--display); }
+    .faq-list summary::-webkit-details-marker { display: none; }
+    .faq-list summary::after { flex: 0 0 auto; color: var(--green); content: "+"; font: 400 23px var(--body); }
+    .faq-list details[open] summary::after { content: "−"; }
+    .faq-list summary:focus-visible { outline: 2px solid var(--green); outline-offset: 4px; }
+    .faq-list details p { max-width: 600px; margin: -2px 36px 20px 0; color: var(--muted); font-size: 14px; }
+
     .contact-section { padding: 100px 0; }
     .contact-panel { position: relative; display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 40px; overflow: hidden; padding: 58px; background: var(--lime); }
     .contact-panel::after { position: absolute; top: -94px; right: 230px; width: 250px; height: 250px; border: 1px solid rgb(21 77 59 / 18%); border-radius: 50%; content: ""; }
     .contact-panel .eyebrow { color: var(--green); }
     .contact-panel .section-title { position: relative; z-index: 1; max-width: 650px; margin-top: 12px; font-size: 62px; }
     .contact-panel p { max-width: 440px; margin: 13px 0 0; color: #455843; }
-    .contact-actions { position: relative; z-index: 1; display: grid; min-width: 220px; gap: 10px; }
-    .contact-panel .button { width: 100%; min-width: 175px; background: var(--ink); }
+    .inquiry-form { position: relative; z-index: 1; display: grid; width: min(360px, 100%); gap: 12px; }
+    .inquiry-form label { display: grid; gap: 5px; color: var(--ink); font-size: 12px; font-weight: 700; }
+    .inquiry-form input, .inquiry-form select, .inquiry-form textarea { width: 100%; min-height: 44px; padding: 10px 12px; border: 1px solid rgb(23 35 29 / 28%); border-radius: 2px; background: var(--paper); color: var(--ink); font: 14px var(--body); }
+    .inquiry-form textarea { min-height: 90px; resize: vertical; }
+    .inquiry-form input:focus-visible, .inquiry-form select:focus-visible, .inquiry-form textarea:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; }
+    .contact-panel .button { width: 100%; min-width: 175px; background: var(--ink); cursor: pointer; }
     .contact-panel .button:hover { background: #31483b; }
-    .contact-message { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 8px; padding: 0 16px; border: 1px solid var(--ink); color: var(--ink); font-size: 14px; font-weight: 700; transition: background .2s ease, color .2s ease; }
-    .contact-message:hover { background: var(--ink); color: var(--white); }
+    .form-note { margin: 0 !important; color: #455843; font-size: 11px !important; }
+    .contact-phone { display: inline-flex; align-items: center; gap: 8px; color: var(--ink); font-size: 13px; font-weight: 700; }
+    .contact-phone:hover { text-decoration: underline; }
 
     .footer { padding: 28px 0; border-top: 1px solid var(--line); }
     .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
@@ -155,6 +177,7 @@
       .section-title { font-size: 48px; }
       .hero-visual { min-height: 400px; }
       .services-grid, .about-grid { gap: 40px; }
+      .faq-layout { gap: 40px; }
       .work-grid { gap: 12px; }
       .work-art { min-height: 190px; padding: 15px; }
       .proof-inner { flex-wrap: wrap; justify-content: flex-start; padding-block: 20px; }
@@ -180,9 +203,10 @@
       .proof-inner { gap: 16px 24px; }
       .proof-item { font-size: 13px; }
       .section { padding: 72px 0; }
-      .services-grid, .about-grid { grid-template-columns: 1fr; gap: 28px; }
+      .services-grid, .about-grid, .faq-layout { grid-template-columns: 1fr; gap: 28px; }
       .section-title { font-size: 42px; }
       .service-row { grid-template-columns: 36px 1fr 20px; gap: 12px; }
+      .process-grid { grid-template-columns: 1fr; gap: 22px; }
       .work-section { padding: 72px 0; }
       .work-grid { grid-template-columns: 1fr; }
       .work-art { min-height: 230px; }
@@ -191,7 +215,7 @@
       .contact-panel { grid-template-columns: 1fr; gap: 26px; padding: 32px 24px; }
       .contact-panel .section-title { font-size: 43px; }
       .contact-panel::after { right: -100px; }
-      .contact-actions { width: min(260px, 100%); min-width: 0; }
+      .inquiry-form { width: 100%; max-width: 420px; }
       .footer-inner { align-items: start; flex-direction: column; }
     }
   </style>
@@ -210,6 +234,8 @@
         <a href="#services">Services</a>
         <a href="#work">Work</a>
         <a href="#about">About</a>
+        <a href="#process">Process</a>
+        <a href="#faq">FAQ</a>
         <a class="nav-cta" href="#contact">Let's talk <span aria-hidden="true">↗</span></a>
       </div>
     </nav>
@@ -267,6 +293,21 @@
       </div>
     </section>
 
+    <section class="section process-section" id="process">
+      <div class="wrap">
+        <div class="reveal">
+          <div class="eyebrow">How we work</div>
+          <h2 class="section-title">A clear path from idea to launch.</h2>
+          <p class="section-intro">A collaborative process keeps the goals, design, and development connected from the start.</p>
+        </div>
+        <div class="process-grid">
+          <article class="process-step reveal"><div class="process-number">01 / DISCOVER</div><h3>Understand the goal</h3><p>We discuss your audience, the purpose of the website, and the content and features it needs.</p></article>
+          <article class="process-step reveal"><div class="process-number">02 / DESIGN</div><h3>Shape the experience</h3><p>We plan the structure and visual direction around the people who will read, learn, and use the site.</p></article>
+          <article class="process-step reveal"><div class="process-number">03 / DEVELOP</div><h3>Build and prepare</h3><p>We develop the agreed experience, review the result together, and prepare it for launch.</p></article>
+        </div>
+      </div>
+    </section>
+
     <section class="work-section" id="work">
       <div class="wrap">
         <div class="reveal">
@@ -310,17 +351,51 @@
       </div>
     </section>
 
+    <section class="section faq-section" id="faq">
+      <div class="faq-layout wrap">
+        <div class="reveal">
+          <div class="eyebrow">Common questions</div>
+          <h2 class="section-title">A few things to know.</h2>
+          <p class="section-intro">Have a question that isn't listed? Get in touch and tell us what you're planning.</p>
+        </div>
+        <div class="faq-list reveal">
+          <details><summary>What kinds of websites do you build?</summary><p>We focus on custom Quran websites and Islamic digital experiences, and also build business websites and online resources for organizations.</p></details>
+          <details><summary>Who do you work with?</summary><p>We work with people and organizations looking to create useful digital experiences for Muslim readers, learners, and communities.</p></details>
+          <details><summary>Can you update a website that already exists?</summary><p>Yes. Share your current site and the changes you're looking for so we can discuss the scope and a suitable approach.</p></details>
+          <details><summary>How do you handle Quran text and translations?</summary><p>Content, translation, and source requirements should be agreed on for each project. Religious text and translations should be confirmed against sources you trust before publication.</p></details>
+          <details><summary>Will my website work on phones?</summary><p>Websites are designed to adapt to phone, tablet, and desktop screens.</p></details>
+          <details><summary>How do I get started?</summary><p>Send a short project inquiry with your goals. We'll follow up to discuss the details and possible next steps.</p></details>
+        </div>
+      </div>
+    </section>
+
     <section class="contact-section" id="contact">
       <div class="contact-panel wrap reveal">
         <div>
           <div class="eyebrow">Have an idea?</div>
-          <h2 class="section-title">Let's make something useful.</h2>
-          <p>Tell me a little about your business and what you'd like to build. We'll figure out a good next step together.</p>
+          <h2 class="section-title">Tell us what you'd like to build.</h2>
+          <p>Share a few details about your Quran website or digital project and we'll be in touch.</p>
+          <a class="contact-phone" href="sms:+15167305520">Or text +1 (516) 730-5520 <span aria-hidden="true">↗</span></a>
         </div>
-        <div class="contact-actions">
-          <a class="button" href="mailto:al-islam-md@agentmail.to">Email Dawud <span aria-hidden="true">↗</span></a>
-          <a class="contact-message" href="sms:+15167305520">Text +1 (516) 730-5520 <span aria-hidden="true">↗</span></a>
-        </div>
+        <form class="inquiry-form" id="inquiry-form">
+          <label for="inquiry-name">Your name</label>
+          <input id="inquiry-name" name="name" autocomplete="name" required>
+          <label for="inquiry-email">Your email</label>
+          <input id="inquiry-email" name="email" type="email" autocomplete="email" required>
+          <label for="inquiry-service">What do you need?</label>
+          <select id="inquiry-service" name="service" required>
+            <option value="" selected disabled>Select a project type</option>
+            <option>Quran website</option>
+            <option>Islamic digital experience</option>
+            <option>Business website</option>
+            <option>Website update or support</option>
+            <option>Other</option>
+          </select>
+          <label for="inquiry-details">A little about your project</label>
+          <textarea id="inquiry-details" name="details" required></textarea>
+          <button class="button" type="submit">Prepare project email <span aria-hidden="true">↗</span></button>
+          <p class="form-note">Your email app will open with these details filled in. Nothing is sent until you send the email.</p>
+        </form>
       </div>
     </section>
   </main>
@@ -328,7 +403,7 @@
   <footer class="footer">
     <div class="footer-inner wrap">
       <p>© <span id="year">2026</span> Al-Islam MD Developing Company</p>
-      <div class="footer-links"><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+      <div class="footer-links"><a href="#services">Services</a><a href="#about">About</a><a href="#faq">FAQ</a><a href="#contact">Contact</a></div>
       <p>Built with care.</p>
     </div>
   </footer>
@@ -352,6 +427,16 @@
     });
 
     document.querySelector('#year').textContent = new Date().getFullYear();
+
+    document.querySelector('#inquiry-form').addEventListener('submit', (event) => {
+      event.preventDefault();
+      const formData = new FormData(event.currentTarget);
+      const subject = encodeURIComponent(`Project inquiry: ${formData.get('service')}`);
+      const body = encodeURIComponent(
+        `Name: ${formData.get('name')}\nEmail: ${formData.get('email')}\nProject type: ${formData.get('service')}\n\nProject details:\n${formData.get('details')}`
+      );
+      window.location.href = `mailto:al-islam-md@agentmail.to?subject=${subject}&body=${body}`;
+    });
 
     if ('IntersectionObserver' in window) {
       const observer = new IntersectionObserver((entries) => {
