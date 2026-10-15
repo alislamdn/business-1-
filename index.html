@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f7f2">
+  <meta name="description" content="Al-Islam MD Developing Company creates thoughtful websites and digital products for growing businesses.">
+  <title>Al-Islam MD Developing Company | Digital, made personal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #f7f7f2;
+      --ink: #17231d;
+      --muted: #657169;
+      --line: #dce2db;
+      --green: #154d3b;
+      --lime: #d7f36a;
+      --coral: #eb765d;
+      --white: #fff;
+      --display: "Space Grotesk", sans-serif;
+      --body: "DM Sans", sans-serif;
+      --content: 1160px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.6 var(--body); }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    img { display: block; max-width: 100%; }
+    .wrap { width: min(var(--content), calc(100% - 48px)); margin-inline: auto; }
+    .eyebrow { display: flex; align-items: center; gap: 10px; color: var(--green); font-size: 12px; font-weight: 700; text-transform: uppercase; }
+    .eyebrow::before { width: 8px; height: 8px; border-radius: 50%; background: var(--coral); content: ""; }
+    .section-title { max-width: 700px; margin: 14px 0 0; font: 600 58px/1.05 var(--display); letter-spacing: 0; }
+    .section-intro { max-width: 540px; margin: 16px 0 0; color: var(--muted); }
+
+    .site-header { position: sticky; z-index: 10; top: 0; border-bottom: 1px solid rgb(23 35 29 / 8%); background: rgb(247 247 242 / 94%); backdrop-filter: blur(14px); }
+    .nav { display: flex; min-height: 76px; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: inline-flex; align-items: center; gap: 12px; font: 700 15px/1.15 var(--display); }
+    .brand-mark { display: grid; width: 38px; aspect-ratio: 1; place-items: center; border-radius: 12px 12px 12px 3px; background: var(--green); color: var(--lime); font: 700 15px var(--display); }
+    .brand span:last-child { max-width: 190px; }
+    .nav-links { display: flex; align-items: center; gap: 30px; color: #46544b; font-size: 14px; font-weight: 600; }
+    .nav-links a:not(.nav-cta):hover { color: var(--green); }
+    .nav-cta, .button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 10px; padding: 0 20px; border: 0; border-radius: 4px; background: var(--green); color: var(--white); font-size: 14px; font-weight: 700; transition: background .2s ease, transform .2s ease; }
+    .nav-cta { min-height: 42px; padding-inline: 16px; }
+    .nav-cta:hover, .button:hover { transform: translateY(-2px); background: #216a50; }
+    .menu-toggle { display: none; width: 44px; height: 44px; place-items: center; border: 1px solid var(--line); border-radius: 4px; background: transparent; color: var(--ink); cursor: pointer; }
+
+    .hero { padding: 76px 0 84px; }
+    .hero-grid { display: grid; grid-template-columns: 1.02fr .98fr; align-items: center; gap: 64px; }
+    .hero h1 { max-width: 660px; margin: 20px 0 22px; font: 600 74px/.99 var(--display); letter-spacing: 0; }
+    .hero h1 em { color: var(--green); font-style: normal; }
+    .hero-copy { max-width: 510px; margin: 0; color: var(--muted); font-size: 18px; }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 22px; margin-top: 30px; }
+    .text-link { display: inline-flex; align-items: center; gap: 8px; color: var(--green); font-size: 14px; font-weight: 700; }
+    .text-link span { transition: transform .2s ease; }
+    .text-link:hover span { transform: translateX(4px); }
+    .hero-note { display: flex; align-items: center; gap: 12px; margin-top: 44px; color: var(--muted); font-size: 13px; }
+    .avatar-stack { display: flex; padding-left: 2px; }
+    .avatar-stack span { display: grid; width: 30px; height: 30px; place-items: center; margin-left: -3px; border: 2px solid var(--paper); border-radius: 50%; background: var(--lime); color: var(--green); font-size: 10px; font-weight: 700; }
+    .avatar-stack span:nth-child(2) { background: #f1a28d; }
+    .avatar-stack span:nth-child(3) { background: #c8d9ce; }
+    .hero-visual { position: relative; min-height: 470px; }
+    .hero-photo { position: absolute; inset: 0 20px 22px 0; overflow: hidden; border-radius: 4px 74px 4px 4px; background: #cbd5cb; }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: 52% center; }
+    .photo-tint { position: absolute; inset: 0; background: linear-gradient(160deg, rgb(21 77 59 / 4%), rgb(21 77 59 / 30%)); }
+    .project-stamp { position: absolute; right: -3px; bottom: 0; width: 192px; padding: 19px 20px; background: var(--lime); color: var(--ink); }
+    .project-stamp strong { display: block; font: 600 26px/1.1 var(--display); }
+    .project-stamp span { display: block; margin-top: 7px; font-size: 12px; }
+    .hero-index { position: absolute; top: 19px; right: 0; writing-mode: vertical-rl; color: var(--green); font-size: 11px; font-weight: 700; letter-spacing: .12em; }
+
+    .proof-strip { border-block: 1px solid var(--line); background: #eff1e9; }
+    .proof-inner { display: flex; min-height: 86px; align-items: center; justify-content: space-between; gap: 22px; }
+    .proof-label { max-width: 220px; color: var(--muted); font-size: 13px; }
+    .proof-item { display: flex; align-items: center; gap: 10px; font: 600 15px var(--display); }
+    .proof-item b { display: grid; width: 30px; aspect-ratio: 1; place-items: center; border: 1px solid #c6d0c7; border-radius: 50%; color: var(--green); font: 700 13px var(--body); }
+
+    .section { padding: 104px 0; }
+    .services-grid { display: grid; grid-template-columns: .8fr 1.2fr; gap: 74px; }
+    .services-list { border-top: 1px solid var(--line); }
+    .service-row { display: grid; grid-template-columns: 52px 1fr 24px; align-items: start; gap: 16px; padding: 23px 0; border-bottom: 1px solid var(--line); }
+    .service-no { padding-top: 3px; color: var(--coral); font: 600 13px var(--display); }
+    .service-row h3 { margin: 0; font: 600 21px/1.25 var(--display); }
+    .service-row p { margin: 7px 0 0; color: var(--muted); font-size: 14px; }
+    .service-arrow { color: var(--green); font-size: 20px; }
+
+    .work-section { padding: 100px 0 110px; background: var(--green); color: var(--white); }
+    .work-section .eyebrow { color: var(--lime); }
+    .work-section .section-title { max-width: 650px; }
+    .work-section .section-intro { color: #c2d3c9; }
+    .work-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 45px; }
+    .work-card { overflow: hidden; background: #f8f8f1; color: var(--ink); }
+    .work-art { display: grid; min-height: 225px; place-items: center; overflow: hidden; padding: 25px; background: #e4ebdf; }
+    .work-card:nth-child(2) .work-art { background: #e8ded3; }
+    .work-card:nth-child(3) .work-art { background: #dce4e8; }
+    .mock-window { width: 100%; max-width: 290px; min-height: 152px; overflow: hidden; border: 1px solid rgb(23 35 29 / 12%); border-radius: 5px; background: var(--white); box-shadow: 0 14px 35px rgb(23 35 29 / 12%); transform: rotate(-2deg); }
+    .work-card:nth-child(2) .mock-window { transform: rotate(2deg); }
+    .mock-top { display: flex; height: 22px; align-items: center; gap: 4px; padding: 0 9px; border-bottom: 1px solid #edf0e9; }
+    .mock-top i { width: 5px; height: 5px; border-radius: 50%; background: #d4dbd3; }
+    .mock-body { padding: 14px; }
+    .mock-title { width: 64%; height: 11px; background: var(--green); }
+    .mock-line { width: 78%; height: 5px; margin-top: 8px; background: #e3e8e1; }
+    .mock-line.short { width: 50%; }
+    .mock-pills { display: flex; gap: 7px; margin-top: 13px; }
+    .mock-pills i { width: 55px; height: 18px; border-radius: 2px; background: var(--lime); }
+    .mock-pills i + i { background: #eb765d; }
+    .mock-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; margin-top: 12px; }
+    .mock-cards i { height: 37px; background: #e9eee7; }
+    .work-meta { display: flex; justify-content: space-between; gap: 12px; padding: 18px 18px 20px; }
+    .work-meta h3 { margin: 0; font: 600 17px var(--display); }
+    .work-meta p { margin: 6px 0 0; color: var(--muted); font-size: 12px; }
+    .work-tag { flex: 0 0 auto; align-self: start; padding: 5px 8px; background: #edf0e8; color: #4a5d50; font-size: 10px; font-weight: 700; text-transform: uppercase; }
+    .work-disclaimer { margin: 20px 0 0; color: #c2d3c9; font-size: 12px; }
+
+    .about-grid { display: grid; grid-template-columns: .95fr 1.05fr; align-items: center; gap: 82px; }
+    .about-visual { position: relative; min-height: 410px; overflow: hidden; background: #dce4d8; }
+    .about-visual img { width: 100%; height: 410px; object-fit: cover; object-position: center; }
+    .about-caption { position: absolute; right: 0; bottom: 0; padding: 15px 18px; background: var(--lime); font-size: 12px; font-weight: 700; }
+    .owner-mark { display: grid; width: 64px; height: 64px; margin-bottom: 23px; place-items: center; border-radius: 50%; background: var(--green); color: var(--lime); font: 700 20px var(--display); }
+    .about-copy > p { max-width: 520px; color: var(--muted); }
+    .about-copy .section-title { margin-bottom: 18px; }
+    .owner-name { margin: 24px 0 0; font: 600 17px var(--display); }
+    .owner-role { margin: 2px 0 0; color: var(--muted); font-size: 13px; }
+
+    .reviews-section { border-block: 1px solid var(--line); background: #eff1e9; }
+    .reviews-head { display: flex; align-items: end; justify-content: space-between; gap: 30px; }
+    .review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 40px; }
+    .review { min-height: 230px; padding: 24px; border-top: 3px solid var(--green); background: var(--paper); }
+    .review-label { color: var(--green); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+    .review blockquote { margin: 18px 0 24px; color: #3e4c43; font-size: 15px; }
+    .review cite { color: var(--muted); font-size: 12px; font-style: normal; font-weight: 700; }
+    .review-note { margin: 17px 0 0; color: var(--muted); font-size: 12px; }
+
+    .contact-section { padding: 100px 0; }
+    .contact-panel { position: relative; display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 40px; overflow: hidden; padding: 58px; background: var(--lime); }
+    .contact-panel::after { position: absolute; top: -94px; right: 230px; width: 250px; height: 250px; border: 1px solid rgb(21 77 59 / 18%); border-radius: 50%; content: ""; }
+    .contact-panel .eyebrow { color: var(--green); }
+    .contact-panel .section-title { position: relative; z-index: 1; max-width: 650px; margin-top: 12px; font-size: 62px; }
+    .contact-panel p { max-width: 440px; margin: 13px 0 0; color: #455843; }
+    .contact-panel .button { position: relative; z-index: 1; min-width: 175px; background: var(--ink); }
+    .contact-panel .button:hover { background: #31483b; }
+
+    .footer { padding: 28px 0; border-top: 1px solid var(--line); }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .footer p, .footer a { margin: 0; color: var(--muted); font-size: 12px; }
+    .footer-links { display: flex; gap: 20px; }
+    .footer a:hover { color: var(--green); }
+
+    .reveal { opacity: 0; transform: translateY(14px); transition: opacity .65s ease, transform .65s ease; }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+    @media (max-width: 900px) {
+      .hero-grid { gap: 34px; }
+      .hero h1 { font-size: 58px; }
+      .section-title { font-size: 48px; }
+      .hero-visual { min-height: 400px; }
+      .services-grid, .about-grid { gap: 40px; }
+      .work-grid { gap: 12px; }
+      .work-art { min-height: 190px; padding: 15px; }
+      .proof-inner { flex-wrap: wrap; justify-content: flex-start; padding-block: 20px; }
+      .proof-label { flex-basis: 100%; max-width: none; }
+      .contact-panel { padding: 42px; }
+    }
+    @media (max-width: 680px) {
+      .wrap { width: min(var(--content), calc(100% - 36px)); }
+      .nav { min-height: 68px; }
+      .menu-toggle { display: grid; }
+      .nav-links { position: absolute; top: calc(100% + 1px); right: 0; left: 0; display: none; align-items: stretch; gap: 0; padding: 10px 18px 18px; border-bottom: 1px solid var(--line); background: var(--paper); }
+      .nav-links.is-open { display: flex; flex-direction: column; }
+      .nav-links a:not(.nav-cta) { padding: 12px 0; }
+      .nav-cta { margin-top: 8px; }
+      .hero { padding: 54px 0 58px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 34px; }
+      .hero h1 { max-width: 540px; font-size: 54px; }
+      .hero-copy { font-size: 16px; }
+      .hero-visual { min-height: 350px; margin-right: 10px; }
+      .hero-photo { right: 12px; }
+      .project-stamp { width: 160px; padding: 15px; }
+      .project-stamp strong { font-size: 22px; }
+      .proof-inner { gap: 16px 24px; }
+      .proof-item { font-size: 13px; }
+      .section { padding: 72px 0; }
+      .services-grid, .about-grid { grid-template-columns: 1fr; gap: 28px; }
+      .section-title { font-size: 42px; }
+      .service-row { grid-template-columns: 36px 1fr 20px; gap: 12px; }
+      .work-section { padding: 72px 0; }
+      .work-grid, .review-grid { grid-template-columns: 1fr; }
+      .work-art { min-height: 230px; }
+      .about-visual, .about-visual img { min-height: 320px; height: 320px; }
+      .reviews-head { align-items: start; flex-direction: column; }
+      .review { min-height: auto; }
+      .contact-section { padding: 72px 0; }
+      .contact-panel { grid-template-columns: 1fr; gap: 26px; padding: 32px 24px; }
+      .contact-panel .section-title { font-size: 43px; }
+      .contact-panel::after { right: -100px; }
+      .contact-panel .button { justify-self: start; }
+      .footer-inner { align-items: start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Al-Islam MD home">
+        <span class="brand-mark" aria-hidden="true">AM</span>
+        <span>Al-Islam MD<br>Developing Company</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 5h14M3 10h14M3 15h14" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="#services">Services</a>
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#reviews">Reviews</a>
+        <a class="nav-cta" href="#contact">Let's talk <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-grid wrap">
+        <div class="reveal">
+          <div class="eyebrow">Independent digital development</div>
+          <h1>Good ideas deserve a <em>better build.</em></h1>
+          <p class="hero-copy">Al-Islam MD Developing Company helps businesses bring their next idea online with clear thinking, thoughtful design, and dependable development.</p>
+          <div class="hero-actions">
+            <a class="button" href="#contact">Start a conversation <span aria-hidden="true">↗</span></a>
+            <a class="text-link" href="#work">Explore capabilities <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="hero-note">
+            <div class="avatar-stack" aria-hidden="true"><span>W</span><span>D</span><span>G</span></div>
+            <span>Websites and digital tools, made around your business.</span>
+          </div>
+        </div>
+        <div class="hero-visual reveal" aria-label="A developer's workspace">
+          <div class="hero-photo">
+            <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&amp;fit=crop&amp;w=1400&amp;q=85" alt="Laptop displaying code on a developer's desk" fetchpriority="high">
+            <div class="photo-tint"></div>
+          </div>
+          <span class="hero-index">IDEAS INTO DIGITAL</span>
+          <div class="project-stamp"><strong>Built with care.</strong><span>Designed for real people and real work.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="proof-strip" aria-label="Development services">
+      <div class="proof-inner wrap">
+        <div class="proof-label">A thoughtful partner from first sketch to final launch.</div>
+        <div class="proof-item"><b>01</b> Web design</div>
+        <div class="proof-item"><b>02</b> Development</div>
+        <div class="proof-item"><b>03</b> Ongoing support</div>
+      </div>
+    </div>
+
+    <section class="section" id="services">
+      <div class="services-grid wrap">
+        <div class="reveal">
+          <div class="eyebrow">What I do</div>
+          <h2 class="section-title">Digital work that works for you.</h2>
+          <p class="section-intro">Every business has a different next step. The right tools should make that step feel simpler.</p>
+        </div>
+        <div class="services-list reveal">
+          <article class="service-row"><span class="service-no">01</span><div><h3>Business websites</h3><p>Fast, responsive websites that explain what you do and make it easy for customers to take action.</p></div><span class="service-arrow" aria-hidden="true">↗</span></article>
+          <article class="service-row"><span class="service-no">02</span><div><h3>Web applications</h3><p>Purpose-built online tools and features that support the way your business actually operates.</p></div><span class="service-arrow" aria-hidden="true">↗</span></article>
+          <article class="service-row"><span class="service-no">03</span><div><h3>Design and refreshes</h3><p>A clearer look, a smoother experience, or a thoughtful rebuild for a site ready to grow.</p></div><span class="service-arrow" aria-hidden="true">↗</span></article>
+          <article class="service-row"><span class="service-no">04</span><div><h3>Maintenance and support</h3><p>Practical updates and ongoing care to keep your digital presence current and dependable.</p></div><span class="service-arrow" aria-hidden="true">↗</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="work-section" id="work">
+      <div class="wrap">
+        <div class="reveal">
+          <div class="eyebrow">What I build</div>
+          <h2 class="section-title">The right solution for the job.</h2>
+          <p class="section-intro">A few examples of the kind of digital experiences Al-Islam MD Developing Company can create for your business.</p>
+        </div>
+        <div class="work-grid">
+          <article class="work-card reveal">
+            <div class="work-art" aria-hidden="true"><div class="mock-window"><div class="mock-top"><i></i><i></i><i></i></div><div class="mock-body"><div class="mock-title"></div><div class="mock-line"></div><div class="mock-line short"></div><div class="mock-pills"><i></i><i></i></div></div></div></div>
+            <div class="work-meta"><div><h3>Small business website</h3><p>A clear, welcoming home for your business online.</p></div><span class="work-tag">Web design</span></div>
+          </article>
+          <article class="work-card reveal">
+            <div class="work-art" aria-hidden="true"><div class="mock-window"><div class="mock-top"><i></i><i></i><i></i></div><div class="mock-body"><div class="mock-title" style="width:42%"></div><div class="mock-cards"><i></i><i></i><i></i></div><div class="mock-line"></div><div class="mock-line short"></div></div></div></div>
+            <div class="work-meta"><div><h3>Service booking experience</h3><p>A simpler path from discovery to appointment.</p></div><span class="work-tag">Web app</span></div>
+          </article>
+          <article class="work-card reveal">
+            <div class="work-art" aria-hidden="true"><div class="mock-window"><div class="mock-top"><i></i><i></i><i></i></div><div class="mock-body"><div class="mock-title" style="width:53%"></div><div class="mock-line short"></div><div class="mock-cards"><i></i><i></i><i></i></div><div class="mock-pills"><i></i><i></i></div></div></div></div>
+            <div class="work-meta"><div><h3>Custom business tool</h3><p>Useful features tailored to your team's workflow.</p></div><span class="work-tag">Development</span></div>
+          </article>
+        </div>
+        <p class="work-disclaimer">These are representative project examples. Replace them with your completed projects, screenshots, and results before publishing.</p>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="about-grid wrap">
+        <div class="about-visual reveal">
+          <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&amp;fit=crop&amp;w=1100&amp;q=85" alt="Creative team collaborating around a table" loading="lazy">
+          <div class="about-caption">Thoughtful work. Straightforward partnership.</div>
+        </div>
+        <div class="about-copy reveal">
+          <div class="owner-mark" aria-hidden="true">AM</div>
+          <div class="eyebrow">A little about me</div>
+          <h2 class="section-title">A real person behind every project.</h2>
+          <p>Al-Islam MD Developing Company is an independent development business focused on helping people turn practical ideas into useful digital experiences. You work directly with the owner, from the first conversation through launch.</p>
+          <p>Good communication matters as much as good code. The goal is to make the process clear, collaborative, and built around what your business actually needs.</p>
+          <div class="owner-name">Al-Islam MD</div>
+          <div class="owner-role">Owner &amp; Lead Developer</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reviews-section" id="reviews">
+      <div class="wrap">
+        <div class="reviews-head reveal">
+          <div><div class="eyebrow">Kind words</div><h2 class="section-title">A good experience matters.</h2></div>
+          <p class="section-intro">The best measure of the work is how it helps the people who use it.</p>
+        </div>
+        <div class="review-grid">
+          <article class="review reveal"><div class="review-label">Client feedback</div><blockquote>“Add a real client quote here about the project, communication, or results.”</blockquote><cite>Client name · Business name</cite></article>
+          <article class="review reveal"><div class="review-label">Client feedback</div><blockquote>“Replace this with an authentic review that reflects your client's experience.”</blockquote><cite>Client name · Business name</cite></article>
+          <article class="review reveal"><div class="review-label">Client feedback</div><blockquote>“A short, specific testimonial helps future clients understand what it is like to work together.”</blockquote><cite>Client name · Business name</cite></article>
+        </div>
+        <p class="review-note">Review text is placeholder content. Add genuine client reviews and accurate ratings before publishing.</p>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="contact-panel wrap reveal">
+        <div>
+          <div class="eyebrow">Have an idea?</div>
+          <h2 class="section-title">Let's make something useful.</h2>
+          <p>Tell me a little about your business and what you'd like to build. We'll figure out a good next step together.</p>
+        </div>
+        <a class="button" href="mailto:your-email@example.com">Email the owner <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner wrap">
+      <p>© <span id="year">2026</span> Al-Islam MD Developing Company</p>
+      <div class="footer-links"><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+      <p>Built with care.</p>
+    </div>
+  </footer>
+  <script>
+    const menuButton = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    menuButton.addEventListener('click', () => {
+      const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!isOpen));
+      menuButton.setAttribute('aria-label', isOpen ? 'Open navigation' : 'Close navigation');
+      navLinks.classList.toggle('is-open', !isOpen);
+    });
+
+    navLinks.addEventListener('click', (event) => {
+      if (event.target.closest('a')) {
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', 'Open navigation');
+        navLinks.classList.remove('is-open');
+      }
+    });
+
+    document.querySelector('#year').textContent = new Date().getFullYear();
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+    } else {
+      document.querySelectorAll('.reveal').forEach((element) => element.classList.add('is-visible'));
+    }
+  </script>
+</body>
+</html>
