@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f7f7f2">
-  <meta name="description" content="Al-Islam MD Developing Company creates thoughtful websites and digital products for growing businesses.">
-  <title>Al-Islam MD Developing Company | Digital, made personal</title>
+  <meta name="description" content="Al-Islam MD Developing Company is a Muslim development company creating custom Quran websites for the Muslim Ummah.">
+  <title>Al-Islam MD Developing Company | Quran Websites for the Ummah</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -125,23 +125,17 @@
     .owner-name { margin: 24px 0 0; font: 600 17px var(--display); }
     .owner-role { margin: 2px 0 0; color: var(--muted); font-size: 13px; }
 
-    .reviews-section { border-block: 1px solid var(--line); background: #eff1e9; }
-    .reviews-head { display: flex; align-items: end; justify-content: space-between; gap: 30px; }
-    .review-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 40px; }
-    .review { min-height: 230px; padding: 24px; border-top: 3px solid var(--green); background: var(--paper); }
-    .review-label { color: var(--green); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
-    .review blockquote { margin: 18px 0 24px; color: #3e4c43; font-size: 15px; }
-    .review cite { color: var(--muted); font-size: 12px; font-style: normal; font-weight: 700; }
-    .review-note { margin: 17px 0 0; color: var(--muted); font-size: 12px; }
-
     .contact-section { padding: 100px 0; }
     .contact-panel { position: relative; display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 40px; overflow: hidden; padding: 58px; background: var(--lime); }
     .contact-panel::after { position: absolute; top: -94px; right: 230px; width: 250px; height: 250px; border: 1px solid rgb(21 77 59 / 18%); border-radius: 50%; content: ""; }
     .contact-panel .eyebrow { color: var(--green); }
     .contact-panel .section-title { position: relative; z-index: 1; max-width: 650px; margin-top: 12px; font-size: 62px; }
     .contact-panel p { max-width: 440px; margin: 13px 0 0; color: #455843; }
-    .contact-panel .button { position: relative; z-index: 1; min-width: 175px; background: var(--ink); }
+    .contact-actions { position: relative; z-index: 1; display: grid; min-width: 220px; gap: 10px; }
+    .contact-panel .button { width: 100%; min-width: 175px; background: var(--ink); }
     .contact-panel .button:hover { background: #31483b; }
+    .contact-message { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; gap: 8px; padding: 0 16px; border: 1px solid var(--ink); color: var(--ink); font-size: 14px; font-weight: 700; transition: background .2s ease, color .2s ease; }
+    .contact-message:hover { background: var(--ink); color: var(--white); }
 
     .footer { padding: 28px 0; border-top: 1px solid var(--line); }
     .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
@@ -190,16 +184,14 @@
       .section-title { font-size: 42px; }
       .service-row { grid-template-columns: 36px 1fr 20px; gap: 12px; }
       .work-section { padding: 72px 0; }
-      .work-grid, .review-grid { grid-template-columns: 1fr; }
+      .work-grid { grid-template-columns: 1fr; }
       .work-art { min-height: 230px; }
       .about-visual, .about-visual img { min-height: 320px; height: 320px; }
-      .reviews-head { align-items: start; flex-direction: column; }
-      .review { min-height: auto; }
       .contact-section { padding: 72px 0; }
       .contact-panel { grid-template-columns: 1fr; gap: 26px; padding: 32px 24px; }
       .contact-panel .section-title { font-size: 43px; }
       .contact-panel::after { right: -100px; }
-      .contact-panel .button { justify-self: start; }
+      .contact-actions { width: min(260px, 100%); min-width: 0; }
       .footer-inner { align-items: start; flex-direction: column; }
     }
   </style>
@@ -218,7 +210,6 @@
         <a href="#services">Services</a>
         <a href="#work">Work</a>
         <a href="#about">About</a>
-        <a href="#reviews">Reviews</a>
         <a class="nav-cta" href="#contact">Let's talk <span aria-hidden="true">↗</span></a>
       </div>
     </nav>
@@ -228,16 +219,16 @@
     <section class="hero">
       <div class="hero-grid wrap">
         <div class="reveal">
-          <div class="eyebrow">Independent digital development</div>
-          <h1>Good ideas deserve a <em>better build.</em></h1>
-          <p class="hero-copy">Al-Islam MD Developing Company helps businesses bring their next idea online with clear thinking, thoughtful design, and dependable development.</p>
+          <div class="eyebrow">Muslim-led digital development</div>
+          <h1>Quran websites for the <em>Muslim Ummah.</em></h1>
+          <p class="hero-copy">We are a Muslim development company creating custom Quran websites and digital experiences for the Muslim Ummah, thoughtfully designed and developed by us for readers, learners, and communities.</p>
           <div class="hero-actions">
             <a class="button" href="#contact">Start a conversation <span aria-hidden="true">↗</span></a>
             <a class="text-link" href="#work">Explore capabilities <span aria-hidden="true">→</span></a>
           </div>
           <div class="hero-note">
             <div class="avatar-stack" aria-hidden="true"><span>W</span><span>D</span><span>G</span></div>
-            <span>Websites and digital tools, made around your business.</span>
+            <span>Purpose-built websites for Muslim readers and communities.</span>
           </div>
         </div>
         <div class="hero-visual reveal" aria-label="A developer's workspace">
@@ -253,25 +244,25 @@
 
     <div class="proof-strip" aria-label="Development services">
       <div class="proof-inner wrap">
-        <div class="proof-label">A thoughtful partner from first sketch to final launch.</div>
-        <div class="proof-item"><b>01</b> Web design</div>
-        <div class="proof-item"><b>02</b> Development</div>
-        <div class="proof-item"><b>03</b> Ongoing support</div>
+        <div class="proof-label">Custom digital work, designed with the Muslim Ummah in mind.</div>
+        <div class="proof-item"><b>01</b> Quran websites</div>
+        <div class="proof-item"><b>02</b> Islamic digital tools</div>
+        <div class="proof-item"><b>03</b> Web development</div>
       </div>
     </div>
 
     <section class="section" id="services">
       <div class="services-grid wrap">
         <div class="reveal">
-          <div class="eyebrow">What I do</div>
-          <h2 class="section-title">Digital work that works for you.</h2>
-          <p class="section-intro">Every business has a different next step. The right tools should make that step feel simpler.</p>
+          <div class="eyebrow">What we do</div>
+          <h2 class="section-title">Purposeful digital work for our Ummah.</h2>
+          <p class="section-intro">We design and develop Quran websites and useful online experiences with Muslim readers, learners, and communities in mind.</p>
         </div>
         <div class="services-list reveal">
-          <article class="service-row"><span class="service-no">01</span><div><h3>Business websites</h3><p>Fast, responsive websites that explain what you do and make it easy for customers to take action.</p></div><span class="service-arrow" aria-hidden="true">↗</span></article>
-          <article class="service-row"><span class="service-no">02</span><div><h3>Web applications</h3><p>Purpose-built online tools and features that support the way your business actually operates.</p></div><span class="service-arrow" aria-hidden="true">↗</span></article>
-          <article class="service-row"><span class="service-no">03</span><div><h3>Design and refreshes</h3><p>A clearer look, a smoother experience, or a thoughtful rebuild for a site ready to grow.</p></div><span class="service-arrow" aria-hidden="true">↗</span></article>
-          <article class="service-row"><span class="service-no">04</span><div><h3>Maintenance and support</h3><p>Practical updates and ongoing care to keep your digital presence current and dependable.</p></div><span class="service-arrow" aria-hidden="true">↗</span></article>
+          <article class="service-row"><span class="service-no">01</span><div><h3>Custom Quran websites</h3><p>Quran-focused websites designed and developed by us for readers, learners, and the Muslim Ummah.</p></div><span class="service-arrow" aria-hidden="true">↗</span></article>
+          <article class="service-row"><span class="service-no">02</span><div><h3>Islamic digital experiences</h3><p>Purpose-built online tools and resources shaped around the needs of Muslim communities.</p></div><span class="service-arrow" aria-hidden="true">↗</span></article>
+          <article class="service-row"><span class="service-no">03</span><div><h3>Business websites</h3><p>Responsive websites that clearly introduce your organization and make it easy to get in touch.</p></div><span class="service-arrow" aria-hidden="true">↗</span></article>
+          <article class="service-row"><span class="service-no">04</span><div><h3>Design, updates, and support</h3><p>Thoughtful visual design, website improvements, and practical ongoing care.</p></div><span class="service-arrow" aria-hidden="true">↗</span></article>
         </div>
       </div>
     </section>
@@ -279,25 +270,25 @@
     <section class="work-section" id="work">
       <div class="wrap">
         <div class="reveal">
-          <div class="eyebrow">What I build</div>
-          <h2 class="section-title">The right solution for the job.</h2>
-          <p class="section-intro">A few examples of the kind of digital experiences Al-Islam MD Developing Company can create for your business.</p>
+          <div class="eyebrow">What we build</div>
+          <h2 class="section-title">Quran websites, designed by us.</h2>
+          <p class="section-intro">Custom digital experiences designed for the Muslim Ummah, with the needs of readers, learners, and communities at the center.</p>
         </div>
         <div class="work-grid">
           <article class="work-card reveal">
             <div class="work-art" aria-hidden="true"><div class="mock-window"><div class="mock-top"><i></i><i></i><i></i></div><div class="mock-body"><div class="mock-title"></div><div class="mock-line"></div><div class="mock-line short"></div><div class="mock-pills"><i></i><i></i></div></div></div></div>
-            <div class="work-meta"><div><h3>Small business website</h3><p>A clear, welcoming home for your business online.</p></div><span class="work-tag">Web design</span></div>
+            <div class="work-meta"><div><h3>Quran reading website</h3><p>A considered online experience for Quran readers.</p></div><span class="work-tag">Quran</span></div>
           </article>
           <article class="work-card reveal">
             <div class="work-art" aria-hidden="true"><div class="mock-window"><div class="mock-top"><i></i><i></i><i></i></div><div class="mock-body"><div class="mock-title" style="width:42%"></div><div class="mock-cards"><i></i><i></i><i></i></div><div class="mock-line"></div><div class="mock-line short"></div></div></div></div>
-            <div class="work-meta"><div><h3>Service booking experience</h3><p>A simpler path from discovery to appointment.</p></div><span class="work-tag">Web app</span></div>
+            <div class="work-meta"><div><h3>Quran learning platform</h3><p>A welcoming digital space for study and learning.</p></div><span class="work-tag">Learning</span></div>
           </article>
           <article class="work-card reveal">
             <div class="work-art" aria-hidden="true"><div class="mock-window"><div class="mock-top"><i></i><i></i><i></i></div><div class="mock-body"><div class="mock-title" style="width:53%"></div><div class="mock-line short"></div><div class="mock-cards"><i></i><i></i><i></i></div><div class="mock-pills"><i></i><i></i></div></div></div></div>
-            <div class="work-meta"><div><h3>Custom business tool</h3><p>Useful features tailored to your team's workflow.</p></div><span class="work-tag">Development</span></div>
+            <div class="work-meta"><div><h3>Muslim community resources</h3><p>Useful online resources for the needs of a community.</p></div><span class="work-tag">Community</span></div>
           </article>
         </div>
-        <p class="work-disclaimer">These are representative project examples. Replace them with your completed projects, screenshots, and results before publishing.</p>
+        <p class="work-disclaimer">These cards describe the kinds of projects we build. Replace them with links and screenshots of completed projects as they become available.</p>
       </div>
     </section>
 
@@ -308,29 +299,14 @@
           <div class="about-caption">Thoughtful work. Straightforward partnership.</div>
         </div>
         <div class="about-copy reveal">
-          <div class="owner-mark" aria-hidden="true">AM</div>
-          <div class="eyebrow">A little about me</div>
-          <h2 class="section-title">A real person behind every project.</h2>
-          <p>Al-Islam MD Developing Company is an independent development business focused on helping people turn practical ideas into useful digital experiences. You work directly with the owner, from the first conversation through launch.</p>
-          <p>Good communication matters as much as good code. The goal is to make the process clear, collaborative, and built around what your business actually needs.</p>
-          <div class="owner-name">Al-Islam MD</div>
+          <div class="owner-mark" aria-hidden="true">DE</div>
+          <div class="eyebrow">Who we are</div>
+          <h2 class="section-title">Built with the Muslim Ummah in mind.</h2>
+          <p>Al-Islam MD Developing Company is a Muslim development company focused on creating Quran websites and digital experiences for the Muslim Ummah. Our work is specifically designed and developed by us for the people and communities who use it.</p>
+          <p>Dawud Ehtasham leads development, bringing each project from the first conversation through design and launch.</p>
+          <div class="owner-name">Dawud Ehtasham</div>
           <div class="owner-role">Owner &amp; Lead Developer</div>
         </div>
-      </div>
-    </section>
-
-    <section class="section reviews-section" id="reviews">
-      <div class="wrap">
-        <div class="reviews-head reveal">
-          <div><div class="eyebrow">Kind words</div><h2 class="section-title">A good experience matters.</h2></div>
-          <p class="section-intro">The best measure of the work is how it helps the people who use it.</p>
-        </div>
-        <div class="review-grid">
-          <article class="review reveal"><div class="review-label">Client feedback</div><blockquote>“Add a real client quote here about the project, communication, or results.”</blockquote><cite>Client name · Business name</cite></article>
-          <article class="review reveal"><div class="review-label">Client feedback</div><blockquote>“Replace this with an authentic review that reflects your client's experience.”</blockquote><cite>Client name · Business name</cite></article>
-          <article class="review reveal"><div class="review-label">Client feedback</div><blockquote>“A short, specific testimonial helps future clients understand what it is like to work together.”</blockquote><cite>Client name · Business name</cite></article>
-        </div>
-        <p class="review-note">Review text is placeholder content. Add genuine client reviews and accurate ratings before publishing.</p>
       </div>
     </section>
 
@@ -341,7 +317,10 @@
           <h2 class="section-title">Let's make something useful.</h2>
           <p>Tell me a little about your business and what you'd like to build. We'll figure out a good next step together.</p>
         </div>
-        <a class="button" href="mailto:your-email@example.com">Email the owner <span aria-hidden="true">↗</span></a>
+        <div class="contact-actions">
+          <a class="button" href="mailto:al-islam-md@agentmail.to">Email Dawud <span aria-hidden="true">↗</span></a>
+          <a class="contact-message" href="sms:+15167305520">Text +1 (516) 730-5520 <span aria-hidden="true">↗</span></a>
+        </div>
       </div>
     </section>
   </main>
